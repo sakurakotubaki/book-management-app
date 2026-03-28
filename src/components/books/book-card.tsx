@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { ExternalLink, Pencil, Trash2 } from "lucide-react";
-import type { Book } from "@/types/book";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import type { Book } from "@/types/book";
 import { BookCoverPlaceholder } from "./book-cover-placeholder";
 import { BookProgressBar } from "./book-progress-bar";
 import { BookStatusBadge } from "./book-status-badge";

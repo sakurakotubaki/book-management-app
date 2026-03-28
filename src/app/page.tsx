@@ -1,19 +1,24 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Plus, Loader2 } from "lucide-react";
-import { useBooks, useAddBook, useUpdateBook, useDeleteBook } from "@/hooks/use-books";
-import { filterAndSortBooks } from "@/lib/book-utils";
-import type { Book, BookFilters, BookFormData } from "@/types/book";
+import { Loader2, Plus } from "lucide-react";
+import { useMemo, useState } from "react";
+import { BookDeleteDialog } from "@/components/books/book-delete-dialog";
+import { BookFormModal } from "@/components/books/book-form-modal";
+import { BookGrid } from "@/components/books/book-grid";
+import { FilterDropdown } from "@/components/layout/filter-dropdown";
 import { Header } from "@/components/layout/header";
 import { SearchBar } from "@/components/layout/search-bar";
-import { FilterDropdown } from "@/components/layout/filter-dropdown";
 import { SortDropdown } from "@/components/layout/sort-dropdown";
-import { BookGrid } from "@/components/books/book-grid";
-import { BookFormModal } from "@/components/books/book-form-modal";
-import { BookDeleteDialog } from "@/components/books/book-delete-dialog";
 import { SettingsPanel } from "@/components/settings/settings-panel";
 import { Button } from "@/components/ui/button";
+import {
+  useAddBook,
+  useBooks,
+  useDeleteBook,
+  useUpdateBook,
+} from "@/hooks/use-books";
+import { filterAndSortBooks } from "@/lib/book-utils";
+import type { Book, BookFilters, BookFormData } from "@/types/book";
 
 export default function HomePage() {
   const { data: books = [], isLoading } = useBooks();
@@ -38,7 +43,7 @@ export default function HomePage() {
 
   const filteredBooks = useMemo(
     () => filterAndSortBooks(books, filters),
-    [books, filters]
+    [books, filters],
   );
 
   const handleAddClick = () => {
@@ -65,7 +70,7 @@ export default function HomePage() {
             setIsFormModalOpen(false);
             setEditingBook(undefined);
           },
-        }
+        },
       );
     } else {
       addBook.mutate(data, {

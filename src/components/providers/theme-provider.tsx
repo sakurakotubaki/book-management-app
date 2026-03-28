@@ -2,18 +2,18 @@
 
 import {
   createContext,
+  type ReactNode,
+  useCallback,
   useContext,
   useState,
-  useCallback,
   useSyncExternalStore,
-  type ReactNode,
 } from "react";
 import type { ThemeColor, ThemeMode } from "@/constants/themes";
 import {
-  getThemeMode,
-  setThemeMode as saveThemeMode,
   getThemeColor,
+  getThemeMode,
   setThemeColor as saveThemeColor,
+  setThemeMode as saveThemeMode,
 } from "@/lib/storage";
 
 interface ThemeContextValue {
@@ -43,13 +43,17 @@ function getMediaQuerySnapshot(): boolean {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeMode, setThemeModeState] = useState<ThemeMode>(() => getThemeMode());
-  const [themeColor, setThemeColorState] = useState<ThemeColor>(() => getThemeColor());
+  const [themeMode, setThemeModeState] = useState<ThemeMode>(() =>
+    getThemeMode(),
+  );
+  const [themeColor, setThemeColorState] = useState<ThemeColor>(() =>
+    getThemeColor(),
+  );
 
   const systemIsDark = useSyncExternalStore(
     subscribeToMediaQuery,
     getMediaQuerySnapshot,
-    getServerSnapshot
+    getServerSnapshot,
   );
 
   const isDark =

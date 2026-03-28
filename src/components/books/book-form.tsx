@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import type { Book, BookFormData, BookStatusType } from "@/types/book";
-import { BookStatus } from "@/types/book";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
+import type { Book, BookFormData, BookStatusType } from "@/types/book";
+import { BookStatus } from "@/types/book";
 
 interface BookFormProps {
   initialData?: Book;
@@ -30,13 +30,13 @@ export function BookForm({
   const [url, setUrl] = useState(initialData?.url ?? "");
   const [imageUrl, setImageUrl] = useState(initialData?.imageUrl ?? "");
   const [totalPages, setTotalPages] = useState(
-    initialData?.totalPages?.toString() ?? ""
+    initialData?.totalPages?.toString() ?? "",
   );
   const [currentPage, setCurrentPage] = useState(
-    initialData?.currentPage?.toString() ?? "0"
+    initialData?.currentPage?.toString() ?? "0",
   );
   const [status, setStatus] = useState<BookStatusType>(
-    initialData?.status ?? BookStatus.UNREAD
+    initialData?.status ?? BookStatus.UNREAD,
   );
   const [errors, setErrors] = useState<Record<string, string>>({});
 

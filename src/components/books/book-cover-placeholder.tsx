@@ -14,9 +14,7 @@ export function BookCoverPlaceholder({
   const Icon = THEME_BOOK_ICONS[themeColor];
 
   return (
-    <div
-      className={`flex items-center justify-center bg-accent ${className}`}
-    >
+    <div className={`flex items-center justify-center bg-accent ${className}`}>
       <Icon className="h-12 w-12 text-accent-foreground" />
     </div>
   );

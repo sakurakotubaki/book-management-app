@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Download, Upload } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
+import { Download, Upload } from "lucide-react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { downloadBooksAsJson, importBooksFromJson } from "@/lib/export-import";
 
@@ -48,9 +48,7 @@ export function DataManagement() {
 
   return (
     <div className="flex flex-col gap-3">
-      <label className="text-sm font-medium text-foreground">
-        データ管理
-      </label>
+      <label className="text-sm font-medium text-foreground">データ管理</label>
       <div className="flex gap-2">
         <Button variant="secondary" className="flex-1" onClick={handleExport}>
           <Download className="mr-1.5 h-4 w-4" />

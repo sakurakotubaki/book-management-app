@@ -1,7 +1,7 @@
 "use client";
 
-import { type ReactNode, useCallback } from "react";
 import { X } from "lucide-react";
+import { type ReactNode, useCallback } from "react";
 import { Button } from "./button";
 
 interface ModalProps {
@@ -18,7 +18,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         onClose();
       }
     },
-    [onClose]
+    [onClose],
   );
 
   if (!isOpen) return null;
@@ -30,7 +30,9 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
     >
       <div className="w-full max-w-md rounded-xl bg-card shadow-xl">
         <div className="flex items-center justify-between border-b border-border px-6 py-4">
-          <h2 className="text-lg font-semibold text-card-foreground">{title}</h2>
+          <h2 className="text-lg font-semibold text-card-foreground">
+            {title}
+          </h2>
           <Button
             variant="ghost"
             size="icon"

@@ -1,6 +1,9 @@
 import type { Book, BookFilters, BookStatusType } from "@/types/book";
 
-export function calculateProgress(currentPage: number, totalPages: number): number {
+export function calculateProgress(
+  currentPage: number,
+  totalPages: number,
+): number {
   if (totalPages <= 0) return 0;
   const progress = (currentPage / totalPages) * 100;
   return Math.min(100, Math.max(0, Math.round(progress)));
@@ -34,7 +37,11 @@ export function filterBooks(books: Book[], filters: BookFilters): Book[] {
   });
 }
 
-export function sortBooks(books: Book[], sortBy: BookFilters["sortBy"], sortOrder: BookFilters["sortOrder"]): Book[] {
+export function sortBooks(
+  books: Book[],
+  sortBy: BookFilters["sortBy"],
+  sortOrder: BookFilters["sortOrder"],
+): Book[] {
   const sorted = [...books].sort((a, b) => {
     if (sortBy === "createdAt") {
       return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
@@ -49,7 +56,10 @@ export function sortBooks(books: Book[], sortBy: BookFilters["sortBy"], sortOrde
   return sorted;
 }
 
-export function filterAndSortBooks(books: Book[], filters: BookFilters): Book[] {
+export function filterAndSortBooks(
+  books: Book[],
+  filters: BookFilters,
+): Book[] {
   const filtered = filterBooks(books, filters);
   return sortBooks(filtered, filters.sortBy, filters.sortOrder);
 }

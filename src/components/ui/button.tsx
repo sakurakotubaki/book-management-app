@@ -1,4 +1,4 @@
-import { forwardRef, type ButtonHTMLAttributes } from "react";
+import { type ButtonHTMLAttributes, forwardRef } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "destructive";
 type ButtonSize = "sm" | "md" | "lg" | "icon";
@@ -9,14 +9,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-primary text-primary-foreground hover:bg-primary-hover",
-  secondary:
-    "bg-muted text-foreground hover:bg-border",
-  ghost:
-    "bg-transparent hover:bg-muted text-foreground",
-  destructive:
-    "bg-destructive text-white hover:bg-destructive/90",
+  primary: "bg-primary text-primary-foreground hover:bg-primary-hover",
+  secondary: "bg-muted text-foreground hover:bg-border",
+  ghost: "bg-transparent hover:bg-muted text-foreground",
+  destructive: "bg-destructive text-white hover:bg-destructive/90",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -27,7 +23,10 @@ const sizeStyles: Record<ButtonSize, string> = {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "primary", size = "md", className = "", children, ...props }, ref) => {
+  (
+    { variant = "primary", size = "md", className = "", children, ...props },
+    ref,
+  ) => {
     return (
       <button
         ref={ref}
@@ -37,7 +36,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

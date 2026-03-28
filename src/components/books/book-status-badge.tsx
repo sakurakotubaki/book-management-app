@@ -1,5 +1,5 @@
-import type { BookStatusType } from "@/types/book";
 import { getStatusLabel } from "@/lib/book-utils";
+import type { BookStatusType } from "@/types/book";
 
 interface BookStatusBadgeProps {
   status: BookStatusType;

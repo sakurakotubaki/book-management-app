@@ -17,7 +17,9 @@ export function ThemeSelector() {
 
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-sm font-medium text-foreground">テーマカラー</label>
+      <label className="text-sm font-medium text-foreground">
+        テーマカラー
+      </label>
       <div className="flex gap-2">
         {(Object.keys(THEME_COLORS) as ThemeColor[]).map((color) => (
           <button

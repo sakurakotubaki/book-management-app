@@ -1,8 +1,8 @@
 import {
+  BookMarked,
+  Bookmark,
   BookOpen,
   Library,
-  Bookmark,
-  BookMarked,
   NotebookPen,
 } from "lucide-react";
 

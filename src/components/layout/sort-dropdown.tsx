@@ -1,9 +1,9 @@
 "use client";
 
-import type { SortOption, SortOrder } from "@/types/book";
-import { Select } from "@/components/ui/select";
 import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Select } from "@/components/ui/select";
+import type { SortOption, SortOrder } from "@/types/book";
 
 interface SortDropdownProps {
   sortBy: SortOption;

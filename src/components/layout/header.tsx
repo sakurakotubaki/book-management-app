@@ -1,7 +1,7 @@
 "use client";
 
+import { BookOpen, HelpCircle, Settings } from "lucide-react";
 import Link from "next/link";
-import { BookOpen, Settings, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeaderProps {

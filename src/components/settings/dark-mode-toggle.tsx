@@ -1,6 +1,6 @@
 "use client";
 
-import { Sun, Moon, Monitor } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/providers/theme-provider";
 import type { ThemeMode } from "@/constants/themes";
 

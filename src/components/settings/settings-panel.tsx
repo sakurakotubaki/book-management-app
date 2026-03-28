@@ -2,8 +2,8 @@
 
 import { Modal } from "@/components/ui/modal";
 import { DarkModeToggle } from "./dark-mode-toggle";
-import { ThemeSelector } from "./theme-selector";
 import { DataManagement } from "./data-management";
+import { ThemeSelector } from "./theme-selector";
 
 interface SettingsPanelProps {
   isOpen: boolean;
