@@ -1,6 +1,7 @@
 "use client";
 
-import { BookOpen, Settings } from "lucide-react";
+import Link from "next/link";
+import { BookOpen, Settings, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
@@ -15,14 +16,23 @@ export function Header({ onSettingsClick }: HeaderProps) {
           <BookOpen className="h-6 w-6 text-primary" />
           <h1 className="text-xl font-bold text-foreground">書籍管理</h1>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onSettingsClick}
-          aria-label="設定"
-        >
-          <Settings className="h-5 w-5" />
-        </Button>
+        <div className="flex items-center gap-1">
+          <Link
+            href="/help"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            aria-label="使い方"
+          >
+            <HelpCircle className="h-5 w-5" />
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onSettingsClick}
+            aria-label="設定"
+          >
+            <Settings className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
     </header>
   );
