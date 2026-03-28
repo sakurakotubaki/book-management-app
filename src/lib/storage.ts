@@ -1,6 +1,6 @@
 import { STORAGE_KEYS } from "@/constants/storage-keys";
-import type { Book } from "@/types/book";
 import type { ThemeColor, ThemeMode } from "@/constants/themes";
+import type { Book } from "@/types/book";
 
 function getItem<T>(key: string, fallback: T): T {
   if (typeof window === "undefined") return fallback;

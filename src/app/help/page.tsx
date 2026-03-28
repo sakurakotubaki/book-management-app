@@ -1,23 +1,23 @@
-import Link from "next/link";
 import {
-  Plus,
-  Pencil,
-  Trash2,
-  Search,
-  Filter,
-  ArrowUpDown,
-  BookOpen,
-  Sun,
-  Moon,
-  Monitor,
-  Palette,
-  Download,
-  Upload,
   ArrowLeft,
-  CheckCircle,
+  ArrowUpDown,
   BookMarked,
+  BookOpen,
+  CheckCircle,
   Clock,
+  Download,
+  Filter,
+  Monitor,
+  Moon,
+  Palette,
+  Pencil,
+  Plus,
+  Search,
+  Sun,
+  Trash2,
+  Upload,
 } from "lucide-react";
+import Link from "next/link";
 
 interface HelpSectionProps {
   icon: React.ReactNode;
@@ -107,22 +107,37 @@ export default function HelpPage() {
             >
               <div className="flex flex-col gap-3">
                 <Step number={1}>
-                  画面右上の <IconBadge icon={<Plus className="h-3 w-3" />} label="書籍を追加" /> ボタンをクリック
+                  画面右上の{" "}
+                  <IconBadge
+                    icon={<Plus className="h-3 w-3" />}
+                    label="書籍を追加"
+                  />{" "}
+                  ボタンをクリック
                 </Step>
                 <Step number={2}>
                   フォームに書籍情報を入力します：
                   <ul className="mt-2 ml-4 list-disc space-y-1">
-                    <li><strong>タイトル</strong>（必須）- 書籍の名前</li>
-                    <li><strong>URL</strong>（任意）- Amazonなどの購入ページ</li>
-                    <li><strong>表紙画像URL</strong>（任意）- 表紙画像のURL</li>
-                    <li><strong>総ページ数</strong>（必須）- 本の全ページ数</li>
-                    <li><strong>現在のページ</strong> - 今読んでいるページ</li>
-                    <li><strong>ステータス</strong> - 未読/読書中/完読</li>
+                    <li>
+                      <strong>タイトル</strong>（必須）- 書籍の名前
+                    </li>
+                    <li>
+                      <strong>URL</strong>（任意）- Amazonなどの購入ページ
+                    </li>
+                    <li>
+                      <strong>表紙画像URL</strong>（任意）- 表紙画像のURL
+                    </li>
+                    <li>
+                      <strong>総ページ数</strong>（必須）- 本の全ページ数
+                    </li>
+                    <li>
+                      <strong>現在のページ</strong> - 今読んでいるページ
+                    </li>
+                    <li>
+                      <strong>ステータス</strong> - 未読/読書中/完読
+                    </li>
                   </ul>
                 </Step>
-                <Step number={3}>
-                  「追加」ボタンで保存されます
-                </Step>
+                <Step number={3}>「追加」ボタンで保存されます</Step>
               </div>
             </HelpSection>
 
@@ -137,7 +152,10 @@ export default function HelpPage() {
                 </p>
                 <div className="flex gap-4 mt-2">
                   <div className="flex items-center gap-2">
-                    <IconBadge icon={<Pencil className="h-3 w-3" />} label="編集" />
+                    <IconBadge
+                      icon={<Pencil className="h-3 w-3" />}
+                      label="編集"
+                    />
                     <span>- 書籍情報を修正</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -146,7 +164,8 @@ export default function HelpPage() {
                   </div>
                 </div>
                 <p className="mt-2 text-warning">
-                  ※ 削除は確認ダイアログが表示されます。一度削除すると元に戻せません。
+                  ※
+                  削除は確認ダイアログが表示されます。一度削除すると元に戻せません。
                 </p>
               </div>
             </HelpSection>
@@ -171,14 +190,24 @@ export default function HelpPage() {
                     <Filter className="h-4 w-4" />
                     フィルター
                   </div>
-                  <p className="mt-1">
-                    ステータスで絞り込み：
-                  </p>
+                  <p className="mt-1">ステータスで絞り込み：</p>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    <IconBadge icon={<BookOpen className="h-3 w-3" />} label="すべて" />
-                    <IconBadge icon={<Clock className="h-3 w-3" />} label="未読" />
-                    <IconBadge icon={<BookMarked className="h-3 w-3" />} label="読書中" />
-                    <IconBadge icon={<CheckCircle className="h-3 w-3" />} label="完読" />
+                    <IconBadge
+                      icon={<BookOpen className="h-3 w-3" />}
+                      label="すべて"
+                    />
+                    <IconBadge
+                      icon={<Clock className="h-3 w-3" />}
+                      label="未読"
+                    />
+                    <IconBadge
+                      icon={<BookMarked className="h-3 w-3" />}
+                      label="読書中"
+                    />
+                    <IconBadge
+                      icon={<CheckCircle className="h-3 w-3" />}
+                      label="完読"
+                    />
                   </div>
                 </div>
                 <div>
@@ -227,22 +256,46 @@ export default function HelpPage() {
                 <div>
                   <div className="font-medium text-foreground">表示モード</div>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    <IconBadge icon={<Sun className="h-3 w-3" />} label="ライト" />
-                    <IconBadge icon={<Moon className="h-3 w-3" />} label="ダーク" />
-                    <IconBadge icon={<Monitor className="h-3 w-3" />} label="システム" />
+                    <IconBadge
+                      icon={<Sun className="h-3 w-3" />}
+                      label="ライト"
+                    />
+                    <IconBadge
+                      icon={<Moon className="h-3 w-3" />}
+                      label="ダーク"
+                    />
+                    <IconBadge
+                      icon={<Monitor className="h-3 w-3" />}
+                      label="システム"
+                    />
                   </div>
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">テーマカラー</div>
-                  <p className="mt-1">
-                    5色から選択できます：
-                  </p>
+                  <div className="font-medium text-foreground">
+                    テーマカラー
+                  </div>
+                  <p className="mt-1">5色から選択できます：</p>
                   <div className="mt-2 flex gap-2">
-                    <span className="h-6 w-6 rounded-full bg-blue-500" title="Blue" />
-                    <span className="h-6 w-6 rounded-full bg-red-500" title="Red" />
-                    <span className="h-6 w-6 rounded-full bg-green-500" title="Green" />
-                    <span className="h-6 w-6 rounded-full bg-purple-500" title="Purple" />
-                    <span className="h-6 w-6 rounded-full bg-orange-500" title="Orange" />
+                    <span
+                      className="h-6 w-6 rounded-full bg-blue-500"
+                      title="Blue"
+                    />
+                    <span
+                      className="h-6 w-6 rounded-full bg-red-500"
+                      title="Red"
+                    />
+                    <span
+                      className="h-6 w-6 rounded-full bg-green-500"
+                      title="Green"
+                    />
+                    <span
+                      className="h-6 w-6 rounded-full bg-purple-500"
+                      title="Purple"
+                    />
+                    <span
+                      className="h-6 w-6 rounded-full bg-orange-500"
+                      title="Orange"
+                    />
                   </div>
                 </div>
               </div>

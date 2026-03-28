@@ -1,7 +1,7 @@
 "use client";
 
-import type { BookStatusType } from "@/types/book";
 import { Select } from "@/components/ui/select";
+import type { BookStatusType } from "@/types/book";
 
 interface FilterDropdownProps {
   value: BookStatusType | "all";

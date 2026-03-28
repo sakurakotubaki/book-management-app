@@ -1,8 +1,8 @@
 "use client";
 
+import { BookOpen } from "lucide-react";
 import type { Book } from "@/types/book";
 import { BookCard } from "./book-card";
-import { BookOpen } from "lucide-react";
 
 interface BookGridProps {
   books: Book[];

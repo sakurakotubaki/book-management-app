@@ -33,7 +33,11 @@ export async function importBooksFromJson(file: File): Promise<ImportResult> {
       try {
         const content = event.target?.result;
         if (typeof content !== "string") {
-          resolve({ success: false, imported: 0, error: "ファイルを読み込めませんでした" });
+          resolve({
+            success: false,
+            imported: 0,
+            error: "ファイルを読み込めませんでした",
+          });
           return;
         }
 
@@ -53,23 +57,35 @@ export async function importBooksFromJson(file: File): Promise<ImportResult> {
             typeof item.createdAt === "string" &&
             typeof item.totalPages === "number" &&
             typeof item.currentPage === "number" &&
-            typeof item.status === "string"
+            typeof item.status === "string",
         );
 
         if (validBooks.length === 0) {
-          resolve({ success: false, imported: 0, error: "有効な書籍データがありません" });
+          resolve({
+            success: false,
+            imported: 0,
+            error: "有効な書籍データがありません",
+          });
           return;
         }
 
         setBooks(validBooks);
         resolve({ success: true, imported: validBooks.length });
       } catch {
-        resolve({ success: false, imported: 0, error: "JSONの解析に失敗しました" });
+        resolve({
+          success: false,
+          imported: 0,
+          error: "JSONの解析に失敗しました",
+        });
       }
     };
 
     reader.onerror = () => {
-      resolve({ success: false, imported: 0, error: "ファイルの読み込みに失敗しました" });
+      resolve({
+        success: false,
+        imported: 0,
+        error: "ファイルの読み込みに失敗しました",
+      });
     };
 
     reader.readAsText(file);

@@ -1,9 +1,9 @@
 "use client";
 
-import type { Book } from "@/types/book";
-import { Modal } from "@/components/ui/modal";
-import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Modal } from "@/components/ui/modal";
+import type { Book } from "@/types/book";
 
 interface BookDeleteDialogProps {
   isOpen: boolean;

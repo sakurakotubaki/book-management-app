@@ -1,7 +1,7 @@
 "use client";
 
-import type { Book, BookFormData } from "@/types/book";
 import { Modal } from "@/components/ui/modal";
+import type { Book, BookFormData } from "@/types/book";
 import { BookForm } from "./book-form";
 
 interface BookFormModalProps {

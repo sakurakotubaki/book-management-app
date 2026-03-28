@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { v4 as uuidv4 } from "uuid";
 import { getBooks, setBooks } from "@/lib/storage";
 import type { Book, BookFormData } from "@/types/book";
@@ -48,7 +48,7 @@ export function useUpdateBook() {
     }) => {
       const books = getBooks();
       const updatedBooks = books.map((book) =>
-        book.id === id ? { ...book, ...data } : book
+        book.id === id ? { ...book, ...data } : book,
       );
       setBooks(updatedBooks);
       return updatedBooks.find((b) => b.id === id);

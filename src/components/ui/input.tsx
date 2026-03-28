@@ -23,7 +23,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {error && <p className="text-sm text-destructive">{error}</p>}
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";
