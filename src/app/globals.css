@@ -1,26 +1,218 @@
 @import "tailwindcss";
 
+/* ========================================
+   Base Theme - Light Mode
+   ======================================== */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --border: #e5e5e5;
+  --card: #ffffff;
+  --card-foreground: #171717;
+
+  /* Theme color (default: blue) */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-foreground: #ffffff;
+  --accent: #dbeafe;
+  --accent-foreground: #1e40af;
+
+  /* Status colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --destructive: #ef4444;
 }
 
+/* ========================================
+   Dark Mode
+   ======================================== */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --border: #404040;
+  --card: #171717;
+  --card-foreground: #fafafa;
+
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --primary-foreground: #0a0a0a;
+  --accent: #1e3a5f;
+  --accent-foreground: #93c5fd;
+
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --destructive: #f87171;
+}
+
+/* ========================================
+   Theme Color Variants
+   ======================================== */
+
+/* Red Theme */
+[data-theme-color="red"] {
+  --primary: #ef4444;
+  --primary-hover: #dc2626;
+  --accent: #fee2e2;
+  --accent-foreground: #991b1b;
+}
+[data-theme-color="red"].dark,
+.dark[data-theme-color="red"] {
+  --primary: #f87171;
+  --primary-hover: #ef4444;
+  --accent: #450a0a;
+  --accent-foreground: #fca5a5;
+}
+
+/* Green Theme */
+[data-theme-color="green"] {
+  --primary: #22c55e;
+  --primary-hover: #16a34a;
+  --accent: #dcfce7;
+  --accent-foreground: #166534;
+}
+[data-theme-color="green"].dark,
+.dark[data-theme-color="green"] {
+  --primary: #4ade80;
+  --primary-hover: #22c55e;
+  --accent: #052e16;
+  --accent-foreground: #86efac;
+}
+
+/* Purple Theme */
+[data-theme-color="purple"] {
+  --primary: #a855f7;
+  --primary-hover: #9333ea;
+  --accent: #f3e8ff;
+  --accent-foreground: #6b21a8;
+}
+[data-theme-color="purple"].dark,
+.dark[data-theme-color="purple"] {
+  --primary: #c084fc;
+  --primary-hover: #a855f7;
+  --accent: #3b0764;
+  --accent-foreground: #d8b4fe;
+}
+
+/* Orange Theme */
+[data-theme-color="orange"] {
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+  --accent: #ffedd5;
+  --accent-foreground: #9a3412;
+}
+[data-theme-color="orange"].dark,
+.dark[data-theme-color="orange"] {
+  --primary: #fb923c;
+  --primary-hover: #f97316;
+  --accent: #431407;
+  --accent-foreground: #fdba74;
+}
+
+/* ========================================
+   System Dark Mode (when no manual override)
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --muted: #262626;
+    --muted-foreground: #a3a3a3;
+    --border: #404040;
+    --card: #171717;
+    --card-foreground: #fafafa;
+
+    --primary: #60a5fa;
+    --primary-hover: #3b82f6;
+    --primary-foreground: #0a0a0a;
+    --accent: #1e3a5f;
+    --accent-foreground: #93c5fd;
+
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --destructive: #f87171;
+  }
+
+  /* Red theme in system dark mode */
+  :root:not(.light):not(.dark)[data-theme-color="red"] {
+    --primary: #f87171;
+    --primary-hover: #ef4444;
+    --accent: #450a0a;
+    --accent-foreground: #fca5a5;
+  }
+
+  /* Green theme in system dark mode */
+  :root:not(.light):not(.dark)[data-theme-color="green"] {
+    --primary: #4ade80;
+    --primary-hover: #22c55e;
+    --accent: #052e16;
+    --accent-foreground: #86efac;
+  }
+
+  /* Purple theme in system dark mode */
+  :root:not(.light):not(.dark)[data-theme-color="purple"] {
+    --primary: #c084fc;
+    --primary-hover: #a855f7;
+    --accent: #3b0764;
+    --accent-foreground: #d8b4fe;
+  }
+
+  /* Orange theme in system dark mode */
+  :root:not(.light):not(.dark)[data-theme-color="orange"] {
+    --primary: #fb923c;
+    --primary-hover: #f97316;
+    --accent: #431407;
+    --accent-foreground: #fdba74;
+  }
+}
+
+/* ========================================
+   Tailwind v4 Theme Registration
+   ======================================== */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ========================================
+   Base Styles
+   ======================================== */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Prevent flash of unstyled content */
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light):not(.dark) {
+    color-scheme: dark;
+  }
 }
